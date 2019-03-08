@@ -1,7 +1,6 @@
-package com.wzjwhut.websocket;
+package com.wzjwhut.websocket.jetty;
 
 import lombok.extern.log4j.Log4j2;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.OnClose;
@@ -11,13 +10,10 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 
 @Component
 @Log4j2
-@ServerEndpoint(value = "/echo1")
+@ServerEndpoint(value = "/echo1", configurator = WebsocketConfigurator.class)
 public class WebSocketAnnotationDemo {
 
     @OnMessage
@@ -27,7 +23,9 @@ public class WebSocketAnnotationDemo {
 
     @OnOpen
     public void onOpen(Session session) {
-        log.info("onOpen: {}", session);
+        log.info("onOpen: {}", session.getClass());
+        log.info("ip: {}", session.getUserProperties().get("javax.websocket.endpoint.remoteAddress"));
+        log.info("ip: {}", session.getUserProperties().keySet());
     }
 
     @OnClose

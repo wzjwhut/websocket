@@ -1,4 +1,4 @@
-package com.wzjwhut.websocket;
+package com.wzjwhut.websocket.jetty;
 
 import org.eclipse.jetty.websocket.servlet.WebSocketServlet;
 import org.eclipse.jetty.websocket.servlet.WebSocketServletFactory;

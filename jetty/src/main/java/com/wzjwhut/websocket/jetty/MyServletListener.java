@@ -1,4 +1,4 @@
-package com.wzjwhut.websocket;
+package com.wzjwhut.websocket.jetty;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Component;

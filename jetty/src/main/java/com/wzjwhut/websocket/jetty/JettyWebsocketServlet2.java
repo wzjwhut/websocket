@@ -1,4 +1,4 @@
-package com.wzjwhut.websocket;
+package com.wzjwhut.websocket.jetty;
 
 import org.eclipse.jetty.websocket.servlet.ServletUpgradeRequest;
 import org.eclipse.jetty.websocket.servlet.ServletUpgradeResponse;
