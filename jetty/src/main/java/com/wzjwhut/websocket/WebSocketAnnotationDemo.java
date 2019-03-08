@@ -23,7 +23,6 @@ public class WebSocketAnnotationDemo {
 
     @OnOpen
     public void onOpen(Session session) {
-        session.set
         log.info("onOpen: {}", session.getClass());
         log.info("ip: {}", session.getUserProperties().get("javax.websocket.endpoint.remoteAddress"));
         log.info("ip: {}", session.getUserProperties().keySet());
