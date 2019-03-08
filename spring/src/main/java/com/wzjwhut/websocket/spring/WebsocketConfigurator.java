@@ -8,17 +8,18 @@ import javax.websocket.HandshakeResponse;
 import javax.websocket.server.HandshakeRequest;
 import javax.websocket.server.ServerEndpointConfig;
 
-@Component
-@Log4j2
-public class WebsocketConfigurator extends ServerEndpointConfig.Configurator{
 
-    @Override
-    public void modifyHandshake(ServerEndpointConfig config, HandshakeRequest request,
-                                HandshakeResponse response) {
-        log.info("modify handshake: {}", request.getRequestURI());
-        HttpSession httpSession = (HttpSession) request.getHttpSession();
-        throw new RuntimeException("not support");
-//        config.getUserProperties().put("getRemoteAddr",
-//                httpSession.getAttribute("getRemoteAddr"));
-    }
-}
+//@Log4j2
+//public class WebsocketConfigurator extends ServerEndpointConfig.Configurator{
+//
+//    @Override
+//    public void modifyHandshake(ServerEndpointConfig config, HandshakeRequest request,
+//                                HandshakeResponse response) {
+//        log.info("modify handshake: {}", request.getRequestURI());
+//
+//        HttpSession httpSession = (HttpSession) request.getHttpSession();
+//        //throw new RuntimeException("not support");
+////        config.getUserProperties().put("getRemoteAddr",
+////                httpSession.getAttribute("getRemoteAddr"));
+//    }
+//}

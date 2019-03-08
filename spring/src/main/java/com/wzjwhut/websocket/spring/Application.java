@@ -76,6 +76,14 @@ public class Application  extends SpringBootServletInitializer {
             }catch(Throwable ex){
 
             }
+
+            try {
+                log.info("websocket-spring run");
+                WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+                container.connectToServer(new Client(), new URI("ws://127.0.0.1/echo1"));
+            }catch(Throwable ex){
+
+            }
         };
     }
 }

@@ -29,7 +29,7 @@ public class WebSocketInterfaceDemo extends javax.websocket.Endpoint
 
     @Override
     public void onOpen(final Session session, EndpointConfig config) {
-        log.info("onOpen: {}", session.getClass());
+        log.info("onOpen: {}, this: {}", session.getClass(), this.hashCode());
         log.info("ip: {}", session.getUserProperties().get("javax.websocket.endpoint.remoteAddress"));
         //WsSession s = (WsSession)session;
         //log.info("remote ip: {}", session.);
